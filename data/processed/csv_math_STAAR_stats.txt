@@ -1,0 +1,7 @@
+CSV Math STAAR Score Statistics
+Count: 32
+Minimum: 29.00
+Maximum: 88.00
+Mean: 48.31
+Median: 46.00
+Standard Deviation: 14.90

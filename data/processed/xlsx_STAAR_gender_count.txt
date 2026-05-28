@@ -1,0 +1,4 @@
+XLSX Word Count Result
+Word: Female
+Column: B
+Count: 14

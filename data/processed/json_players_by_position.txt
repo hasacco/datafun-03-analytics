@@ -1,0 +1,11 @@
+Players by position:
+C: 1
+FB: 1
+LG: 1
+LT: 1
+QB: 1
+RB: 1
+RG: 1
+RT: 1
+TE: 1
+WR: 3

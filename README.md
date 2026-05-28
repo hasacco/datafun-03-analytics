@@ -188,3 +188,47 @@ git push -u origin main
 | INFO | P03 | Executed successfully!
 | INFO | P03 | ========================
 ```
+
+## Program Modification 5-27-26
+
+hasacco_csv_pipeline.py was modified to read in a file containing test scores and calculate statistics on the 9th grade math score. Median was added to calculated stats.
+The input file used for the csv pipeline is now math_STAAR_scores.csv.
+hasacco_json_pipeline.py was modified to read in player names and positions for the 49ers starting lineup and count the number of players per position.
+The input file used for the json pipeline is now starting_lineup_49ers.json.
+hasacco_text_pipeline.py was modified to read in a file containing a report on maternal mortality rates in the US.
+The input file used for the text pipeline is now maternal_mortality_US.txt.
+hasacco_xlsx_pipeline.py was modified to read in data containing test scores and student information to count the number of females taking a test.
+The input file used for the xlsx pipeline is now Math_STAAR_data.xlsx.
+In all .py files, flow of pipelines were maintained and main() in app_hasacco.py was not changed.
+Modifications were made strictly to input files and one minor change to output information in csv pipeline.
+
+## Example Output 5-27-26
+
+2026-05-27 20:15:40 | INFO | P03 | === RUN START ===
+2026-05-27 20:15:40 | INFO | P03 | project=P03
+2026-05-27 20:15:40 | INFO | P03 | repo_dir=datafun-03-analytics
+2026-05-27 20:15:40 | INFO | P03 | python=3.14.5
+2026-05-27 20:15:40 | INFO | P03 | os=Windows 11
+2026-05-27 20:15:40 | INFO | P03 | shell=powershell
+2026-05-27 20:15:40 | INFO | P03 | cwd=.
+2026-05-27 20:15:40 | INFO | P03 | github_actions=False
+2026-05-27 20:15:40 | INFO | P03 | ========================
+2026-05-27 20:15:40 | INFO | P03 | START main()
+2026-05-27 20:15:40 | INFO | P03 | ========================
+2026-05-27 20:15:40 | INFO | P03 | ROOT_DIR = .
+2026-05-27 20:15:40 | INFO | P03 | PROCESSED_DIR = data\processed
+2026-05-27 20:15:40 | INFO | P03 | CSV: START
+2026-05-27 20:15:40 | INFO | P03 | CSV: wrote C:\Repos\datafun-03-analytics\data\processed\csv_math_STAAR_stats.txt
+2026-05-27 20:15:40 | INFO | P03 | CSV: END
+2026-05-27 20:15:40 | INFO | P03 | XLSX: START
+2026-05-27 20:15:40 | INFO | P03 | XLSX: wrote C:\Repos\datafun-03-analytics\data\processed\xlsx_STAAR_gender_count.txt
+2026-05-27 20:15:40 | INFO | P03 | XLSX: END
+2026-05-27 20:15:40 | INFO | P03 | JSON: START
+2026-05-27 20:15:40 | INFO | P03 | JSON: wrote C:\Repos\datafun-03-analytics\data\processed\json_players_by_position.txt
+2026-05-27 20:15:40 | INFO | P03 | JSON: END
+2026-05-27 20:15:40 | INFO | P03 | TXT: START
+2026-05-27 20:15:40 | INFO | P03 | TXT: wrote C:\Repos\datafun-03-analytics\data\processed\maternal_mortality_summary.txt
+2026-05-27 20:15:40 | INFO | P03 | TXT: END
+2026-05-27 20:15:40 | INFO | P03 | ========================
+2026-05-27 20:15:40 | INFO | P03 | Executed successfully!
+2026-05-27 20:15:40 | INFO | P03 | ========================

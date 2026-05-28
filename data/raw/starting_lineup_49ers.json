@@ -1,0 +1,54 @@
+{
+    "players": [
+        {
+            "position": "QB",
+            "name": "Brock Purdy"
+        },
+        {
+            "position": "RB",
+            "name": "Christian McCaffrey"
+        },
+        {
+            "position": "WR",
+            "name": "Mike Evans"
+        },
+        {
+            "position": "WR",
+            "name": "Ricky Pearsall"
+        },
+        {
+            "position": "WR",
+            "name": "Christian Kirk"
+        },
+        {
+            "position": "TE",
+            "name": "George Kittle"
+        },
+        {
+            "position": "FB",
+            "name": "Kyle Juszczyk"
+        },
+        {
+            "position": "LT",
+            "name": "Trent Williams"
+        },
+        {
+            "position": "LG",
+            "name": "Robert Jones"
+        },
+        {
+            "position": "C",
+            "name": "Jake Brendel"
+        },
+        {
+            "position": "RG",
+            "name": "Dominick Puni"
+        },
+        {
+            "position": "RT",
+            "name": "Colton McKivitz"
+        }
+    ],
+    "number": 12,
+    "message": "success"
+}
