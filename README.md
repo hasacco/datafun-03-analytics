@@ -204,6 +204,7 @@ Modifications were made strictly to input files and one minor change to output i
 
 ## Example Output 5-27-26
 
+```text
 2026-05-27 20:15:40 | INFO | P03 | === RUN START ===
 2026-05-27 20:15:40 | INFO | P03 | project=P03
 2026-05-27 20:15:40 | INFO | P03 | repo_dir=datafun-03-analytics
@@ -232,3 +233,4 @@ Modifications were made strictly to input files and one minor change to output i
 2026-05-27 20:15:40 | INFO | P03 | ========================
 2026-05-27 20:15:40 | INFO | P03 | Executed successfully!
 2026-05-27 20:15:40 | INFO | P03 | ========================
+```
