@@ -1,0 +1,8 @@
+Texas Grade 8 NAEP Score Statistics By ELL Status (1990 - 2024)
+Non-ELL Stats:
+Count: 12
+Minimum: 274.95
+Maximum: 292.91
+Mean: 284.03
+Median: 284.92
+Standard Deviation: 5.91

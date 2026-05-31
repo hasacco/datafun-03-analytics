@@ -1,0 +1,7 @@
+Texas Grade 8 NAEP Score Statistics (1990 - 2024)
+Count: 16
+Minimum: 258.19
+Maximum: 290.35
+Mean: 277.40
+Median: 278.35
+Standard Deviation: 9.02

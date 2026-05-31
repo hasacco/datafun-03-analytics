@@ -234,3 +234,70 @@ Modifications were made strictly to input files and one minor change to output i
 2026-05-27 20:15:40 | INFO | P03 | Executed successfully!
 2026-05-27 20:15:40 | INFO | P03 | ========================
 ```
+
+## New Application 5-31-26
+
+This program will take input data about 8th grade math scores in the state of Texas in the form of an xlsx file, and provide basic analysis of the data.
+It will use a file called grade_8_math_scores_TX.xlsx and output a file called grade_8_math_scores_TX_stats.txt that provide basic statistical values of the data.
+It will also use the input file to create a .png image of a line graph tracking trends of the data over years.
+It will use a file called grade_8_ELL_math_scores_TX.xlsx and output 2 files called grade_8_ELL_math_scores_TX_stats.txt and grade_8_Non_ELL_math_scores_TX_stats.txt that provide basic statistical values of the data. (This is data for English language learner students and non-English language learner students.)
+It will also use the input file to create a .png image of a line graph tracking trends of the data for both groups of students over years on the same plane.
+
+matplotlib was added to dependencies in pyproject.toml for use in graphing.
+Data used for this application was obtained from The Nation's Report Card NAEP Data Explorer at https://www.nationsreportcard.gov/ndecore/xplore/NDE.
+In hasacco_xlsx_pipeline_all_scores:
+  Extract function extract_xlsx_column_string was changed to extract_xlsx_column_values and made to extract a float rather than a string.
+  Transform function transform_scores_to_stats was used from hasacco_csv_pipeline.
+  Function plot_scores was added to transform section in order to create a line graph of scores vs year, and save it as an image.
+  Verify function verify_stats was used from hasacco_csv_pipeline.
+  Load function load_stats_report was sued from hasacco_csv_pipeline.
+  In run_xlsx_pipeline, graph output file was added and one extra print statement was added to logger.
+In hasacco_xlsx_pipeline_scores_ELL:
+  This was mainly built using hasacco_xlsx_pipeine_all_scores, so only changes from that file will be described.
+  Extract function extract_xlsx_column_tuples was added in order to sort values into 2 lists by a category and then return the 2 lists.
+  Extract function extract_xlsx_column_values was still used to extract years from spreadsheet.
+  plot_scores function was modified to graph both lists on the same plot as a double line graph.
+  load_stats_report function was modified to write 2 different files - one for each list produced.
+  run_xlsx_pipeline_ELL is based on run_xlsx_pipeline, but an extra output file is named and an extra print statement is added to logger.
+In app_hasacco_score_analysis:
+  Module functions not used in this application (csv, json, text) were commented out so they are still available for use if file type changes or application is modified.
+  hasacco_xlsx_pipeline_scores_ELL was added to module imports and pipeline calls.
+
+## Example Output 5-31-26
+
+```text
+2026-05-28 20:20:52 | INFO | P03 | === RUN START ===
+2026-05-28 20:20:52 | INFO | P03 | project=P03
+2026-05-28 20:20:52 | INFO | P03 | repo_dir=datafun-03-analytics
+2026-05-28 20:20:52 | INFO | P03 | python=3.14.5
+2026-05-28 20:20:52 | INFO | P03 | os=Windows 11
+2026-05-28 20:20:52 | INFO | P03 | shell=powershell
+2026-05-28 20:20:52 | INFO | P03 | cwd=.
+2026-05-28 20:20:52 | INFO | P03 | github_actions=False
+2026-05-28 20:20:52 | INFO | P03 | ========================
+2026-05-28 20:20:52 | INFO | P03 | START main()
+2026-05-28 20:20:52 | INFO | P03 | ========================
+2026-05-28 20:20:52 | INFO | P03 | ROOT_DIR = .
+2026-05-28 20:20:52 | INFO | P03 | PROCESSED_DIR = data\processed
+2026-05-28 20:20:52 | INFO | P03 | XLSX: START
+2026-05-28 20:20:52 | INFO | P03 | XLSX: USING input file: C:\Repos\datafun-03-analytics\data\raw\grade_8_math_scores_TX.xlsx, column: D
+2026-05-28 20:20:52 | INFO | P03 | XLSX: wrote C:\Repos\datafun-03-analytics\data\processed\grade_8_math_scores_TX_stats.txt
+2026-05-28 20:20:52 | INFO | P03 | XLSX: created graph C:\Repos\datafun-03-analytics\data\processed\grade_8_math_scores_TX_graph.png
+2026-05-28 20:20:52 | INFO | P03 | XLSX: END
+2026-05-28 20:20:52 | INFO | P03 | XLSX: START
+2026-05-28 20:20:52 | INFO | P03 | XLSX: USING input file: C:\Repos\datafun-03-analytics\data\raw\grade_8_ELL_math_scores_TX.xlsx, column: D
+2026-05-28 20:20:53 | INFO | P03 | XLSX: wrote C:\Repos\datafun-03-analytics\data\processed\grade_8_ELL_math_scores_TX_stats.txt
+2026-05-28 20:20:53 | INFO | P03 | XLSX: wrote C:\Repos\datafun-03-analytics\data\processed\grade_8_Non_ELL_math_scores_TX_stats.txt
+2026-05-28 20:20:53 | INFO | P03 | XLSX: created graph C:\Repos\datafun-03-analytics\data\processed\grade_8_ELL_math_scores_TX_graph.png
+2026-05-28 20:20:53 | INFO | P03 | XLSX: END
+2026-05-28 20:20:53 | INFO | P03 | ========================
+2026-05-28 20:20:53 | INFO | P03 | Executed successfully!
+2026-05-28 20:20:53 | INFO | P03 | ========================
+```
+![Grade 8 Math Scores - All Students](image.png)
+![Grade 8 Math Scores By ELL Status](image-1.png)
+data\processed\grade_8_math_scores_TX_stats.txt
+data\processed\grade_8_math_scores_TX_graph.png
+data\processed\grade_8_ELL_math_scores_TX_stats.txt
+data\processed\grade_8_Non_ELL_math_scores_TX_stats.txt
+data\processed\grade_8_ELL_math_scores_TX_graph.png
